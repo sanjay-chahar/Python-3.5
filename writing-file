@@ -1,0 +1,19 @@
+new_path = '/home/sanjay/new_days.txt'
+file = open(new_path,'a')
+p_name = ''
+while p_name != 'Done':
+  p_name = input('please eneter Name of Person:- ').capitalize()
+  p_address = input('Please enter address of person : - ')
+  file.write(p_name)
+  file.write(' ; ')
+  file.write(p_address)
+  file.write('\n')
+file.close()
+
+
+path = '/home/sanjay/new_days.txt'
+file = open(path,'r')
+print(file.read())
+
+
+

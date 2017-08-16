@@ -1,0 +1,22 @@
+# total = input('what is the total amount in your basket: ')
+# province = input('which province do you live in: ').upper()
+# if country == 'CANADA' and province == 'ALBERTA':
+#      print('that will be 0.05 general sales tax')
+# elif country == 'CANADA' and (province == 'ONTARIO' or 'NEW BRUNSWICK' or 'NOVA SCOTIA'):
+#      print('that will be 0.13 harmonized tax')
+# else:
+#     print('thank you for your purchase')
+
+
+country = input('which country do you live in: ').upper()
+if country == 'CANADA':
+    Province = input('what province do you live in: ' ).upper()
+    print(Province)
+if country == 'CANADA' and Province == 'ALBERTA':
+    print('that will be 0.05 general sales tax')
+elif country == 'CANADA' and (Province == 'ONTARIO' or Province == 'NEW BRUNSWICK' or Province == 'NOVA SCOTIA'):
+    print('that will be 0.13 harmonized tax')
+elif Province != 'ONTARIO' 'NEW BRUNSWICK' 'NOVA SCOTIA' 'ALBERTA':
+    print('0.06 Provisional tax')
+else:
+    print('Thanks you for your purchase')

@@ -1,0 +1,446 @@
+Index: python-3.5/writing-file
+===================================================================
+--- python-3.5/writing-file	(date 1502912761000)
++++ python-3.5/writing-file	(date 1502912761000)
+@@ -1,19 +0,0 @@
+-new_path = '/home/sanjay/new_days.txt'
+-file = open(new_path,'a')
+-p_name = ''
+-while p_name != 'Done':
+-  p_name = input('please eneter Name of Person:- ').capitalize()
+-  p_address = input('Please enter address of person : - ')
+-  file.write(p_name)
+-  file.write(' ; ')
+-  file.write(p_address)
+-  file.write('\n')
+-file.close()
+-
+-
+-path = '/home/sanjay/new_days.txt'
+-file = open(path,'r')
+-print(file.read())
+-
+-
+-
+Index: python-3.5/find-out-your-day-of-birth.py
+===================================================================
+--- python-3.5/find-out-your-day-of-birth.py	(date 1502912761000)
++++ python-3.5/find-out-your-day-of-birth.py	(date 1502912761000)
+@@ -1,28 +0,0 @@
+-import datetime
+-from datetime import date
+-
+-
+-#currentDate = datetime.date.today()
+-#print (currentDate.strftime("%d %b %y"))
+-
+-# d0 = datetime.date.today()
+-# print(d0)
+-# year = int(input('Enter a year : '))
+-# month = int(input('Enter a month : '))
+-# day = int(input('Enter a day : '))
+-# d1 = datetime.date(year, month, day)
+-# print(d1)
+-# delta = d0 - d1
+-# print(delta)
+-# #print ('No of days remaining %d' % delta )
+-# start_date = datetime.date.today() + delta
+-#
+-# print(start_date.strftime('Please attend our event %A, %B %d in the year %Y'))
+-
+-
+-
+-inPutdate = input('please enter your birthday (dd/mm/yyyy) : ')
+-
+-birthday = datetime.datetime.strptime(inPutdate, '%d/%m/%Y').date()
+-days = birthday - datetime.date.today()
+-print(days)
+Index: python-3.5/compound-if.py
+===================================================================
+--- python-3.5/compound-if.py	(date 1502912761000)
++++ python-3.5/compound-if.py	(date 1502912761000)
+@@ -1,39 +0,0 @@
+-import locale
+-locale.setlocale(locale.LC_ALL, '')
+-xx = 0
+-
+-
+-basket = int(input('Please Enter your purchase amount '))
+-country = input('which country do you live in: ').upper()
+-if country == 'CANADA':
+-    Province = input('what province do you live in: ' ).upper()
+-# if country == 'CANADA' and Province == 'ALBERTA':
+-#     print('that will be 0.05 general sales tax')
+-# elif country == 'CANADA' and Province == 'ONTARIO' or Province == 'NEW BRUNSWICK' or Province == 'NOVA SCOTIA':
+-#     print('that will be 0.13 harmonized tax')
+-# elif Province != 'ONTARIO' 'NEW BRUNSWICK' 'NOVA SCOTIA' 'ALBERTA':
+-#     print('0.06 Provisional tax')
+-# else:
+-#     print('Thanks you for your purchase'
+-if country != 'CANADA':
+-    print('Thank you for your purchase and you don\'t need to pay tax')
+-
+-elif country == 'CANADA' and Province == 'ALBERTA':
+-    print('that will be 0.05 general tax')
+-    tax = basket * 0.05
+-    total = basket + tax
+-    xx = locale.currency(total)
+-    print('that will be' + ' ' + xx)
+-
+-elif country == 'CANADA' and (Province == 'ONTARIO' or Province == 'NEW BRUNSWICK' or Province == 'NOVA SCOTIA'):
+-    print('that will be 0.13 harmonized tax')
+-    tax2 = basket * 0.13
+-    total2 = basket + tax2
+-    xx = locale.currency(total2)
+-    print('that will be' +' ' + xx)
+-else:
+-    print('that will be 0.06 Provisional tax')
+-    tax3 = basket * 0.06
+-    total3 = basket + tax3
+-    xx = locale.currency(total3)
+-    print('that will be' + ' ' + xx)
+\ No newline at end of file
+Index: python-3.5/demo.txt
+===================================================================
+--- python-3.5/demo.txt	(date 1502912761000)
++++ python-3.5/demo.txt	(date 1502912761000)
+@@ -1,1 +0,0 @@
+-this is first line
+Index: python-3.5/loops.py
+===================================================================
+--- python-3.5/loops.py	(date 1502912761000)
++++ python-3.5/loops.py	(date 1502912761000)
+@@ -1,21 +0,0 @@
+-import turtle
+-user = int(input('how many side you need your object '))
+-for step in range(user):
+-    turtle.forward(200)
+-    turtle.left(360 / user)
+-    for morestep in range(user):
+-        turtle.forward(100)
+-        turtle.left(360 / user)
+-
+-for nums in range(1,10,2):
+-    print(nums)
+-
+-
+-for clours in ['red', 'blue','green','yellow']:
+-    turtle.color(clours)
+-    turtle.forward(200)
+-    turtle.left(360 /user)
+-
+-
+-
+-
+Index: python-3.5/Module 3
+===================================================================
+--- python-3.5/Module 3	(date 1502912761000)
++++ python-3.5/Module 3	(date 1502912761000)
+@@ -1,38 +0,0 @@
+-#name = input('what is your name?')
+-#print(name)
+-# asks user for name by using the command 'input'
+-#then that input is set to equal the variable; name
+-#finally the input from the user is printed
+-
+-#update the value
+-#name = 'chris'
+-#print(name)
+-
+-#you can add or join together 2 different variables
+-#firstname = input('what is your first name?')
+-#lastname = input('what is your last name?')
+-#print('hello ' + firstname + ' ' + lastname)
+-
+-#you can change the case of a variable by using the commands upper, lower and swapcase
+-#message = ('HEllo')
+-#print(message.upper())
+-#print(message.lower())
+-#print(message.swapcase())
+-
+-#the challenge
+-
+-firstname = input('what is your first name?')
+-country = input('what country do you come from?')
+-animal = input('what is your favourite animal?')
+-
+-story = ''' the brave and selfless
+-hero called bob was ready to fight the
+-supreme overlord doctor wegdie man.
+-bob rode in on his gallant and majestic fish and went to
+-fight him in the once serene and peacefull lands
+-of now war-raveged england.'''
+-#print(story)
+-story = (story.replace('bob', firstname))
+-story = (story.replace('fish', animal))
+-story = (story.replace('england', country))
+-print(story)
+Index: python-3.5/list.py
+===================================================================
+--- python-3.5/list.py	(date 1502912761000)
++++ python-3.5/list.py	(date 1502912761000)
+@@ -1,21 +0,0 @@
+-# guest = []
+-# name = ''
+-#
+-# while name != 'Done' :
+-#     name = input('please enter guest name ,when finished enter Done :').capitalize()
+-#     guest.append(name)
+-#
+-# guest.remove('Done')
+-# list.sort(guest)
+-# print(guest)
+-
+-guest = []
+-name = ''
+-
+-while name != 'Done':
+-    name = input('please enter guest name ,when finished enter Done :').capitalize()
+-    guest.append(name)
+-
+-guest.remove('Done')
+-list.sort(guest)
+-print(guest)
+\ No newline at end of file
+Index: python-3.5/datesandtime.py
+===================================================================
+--- python-3.5/datesandtime.py	(date 1502912761000)
++++ python-3.5/datesandtime.py	(date 1502912761000)
+@@ -1,21 +0,0 @@
+-import datetime
+-from datetime import date
+-
+-
+-#currentDate = datetime.date.today()
+-#print (currentDate.strftime("%d %b %y"))
+-
+-d0 = datetime.date.today()
+-d1 = date(2004, 9, 21)
+-delta = d0 - d1
+-print (delta)
+-start_date = datetime.date.today() - delta
+-
+-print(start_date.strftime('Please attend our event %A, %B %d in the year %Y'))
+-
+-#print (start_date.strftime('Please attend event '%A %B %d in the Year %Y'))
+-
+-
+-
+-
+-
+Index: python-3.5/funcation
+===================================================================
+--- python-3.5/funcation	(date 1502912761000)
++++ python-3.5/funcation	(date 1502912761000)
+@@ -1,21 +0,0 @@
+-#Basic Funcation
+-# def main():
+-#     printName()
+-#     return
+-# def printName():
+-#     print('Hello stranger')
+-#     return
+-# main()
+-
+-#little complex funcation
+-
+-def main():
+-    name = str(input('Please input your name :- '))
+-    message = str(input('Please enter your messages :- '))
+-    msg(name, message)
+-    return
+-def msg(name, message):
+-      print(name +  message)
+-      return
+-main()
+-
+Index: python-3.5/if-compound-statement
+===================================================================
+--- python-3.5/if-compound-statement	(date 1502912761000)
++++ python-3.5/if-compound-statement	(date 1502912761000)
+@@ -1,1 +0,0 @@
+-
+\ No newline at end of file
+Index: python-3.5/print-ten-year-future-date.py
+===================================================================
+--- python-3.5/print-ten-year-future-date.py	(date 1502912761000)
++++ python-3.5/print-ten-year-future-date.py	(date 1502912761000)
+@@ -1,12 +0,0 @@
+-import datetime
+-from datetime import date
+-
+-
+-d0 = datetime.date.today()
+-d1 = date(2027, 7, 20)
+-delta = d1 - d0
+-print (delta)
+-start_date = datetime.date.today() + delta
+-
+-print(start_date.strftime('Please attend our event %A, %B %d in the year %Y'))
+-
+Index: python-3.5/complexifstatements
+===================================================================
+--- python-3.5/complexifstatements	(date 1502912761000)
++++ python-3.5/complexifstatements	(date 1502912761000)
+@@ -1,22 +0,0 @@
+-# total = input('what is the total amount in your basket: ')
+-# province = input('which province do you live in: ').upper()
+-# if country == 'CANADA' and province == 'ALBERTA':
+-#      print('that will be 0.05 general sales tax')
+-# elif country == 'CANADA' and (province == 'ONTARIO' or 'NEW BRUNSWICK' or 'NOVA SCOTIA'):
+-#      print('that will be 0.13 harmonized tax')
+-# else:
+-#     print('thank you for your purchase')
+-
+-
+-country = input('which country do you live in: ').upper()
+-if country == 'CANADA':
+-    Province = input('what province do you live in: ' ).upper()
+-    print(Province)
+-if country == 'CANADA' and Province == 'ALBERTA':
+-    print('that will be 0.05 general sales tax')
+-elif country == 'CANADA' and (Province == 'ONTARIO' or Province == 'NEW BRUNSWICK' or Province == 'NOVA SCOTIA'):
+-    print('that will be 0.13 harmonized tax')
+-elif Province != 'ONTARIO' 'NEW BRUNSWICK' 'NOVA SCOTIA' 'ALBERTA':
+-    print('0.06 Provisional tax')
+-else:
+-    print('Thanks you for your purchase')
+Index: python-3.5/if statement.py
+===================================================================
+--- python-3.5/if statement.py	(date 1502912761000)
++++ python-3.5/if statement.py	(date 1502912761000)
+@@ -1,18 +0,0 @@
+-import locale
+-locale.setlocale(locale.LC_ALL, '')
+-
+-xx = 0
+-
+-
+-basket = int(input('what is the total amount in your basket? '))
+-if basket >= 50 :
+-    print('you are elligable for free shipping!')
+-    xx = locale.currency(basket)
+-    print('your total amount to pay is ' + xx)
+-#    print(locale.currency(basket))
+-else:
+-    print('that will be an extra 10 pounds for shipping')
+-    totalamount = basket + 10
+-    xx = locale.currency(totalamount)
+-
+-    print('your total amount to pay is ' + xx)
+\ No newline at end of file
+Index: python-3.5/whileloops.py
+===================================================================
+--- python-3.5/whileloops.py	(date 1502912761000)
++++ python-3.5/whileloops.py	(date 1502912761000)
+@@ -1,25 +0,0 @@
+-#Turtle with while loop
+-import turtle
+-length = int(input('please enter a length '))
+-colour = input ('please enter a colour ')
+-angle = int(input('please enter an angle '))
+-counter = 0
+-while counter < 4:
+-    turtle.color(colour)
+-    turtle.forward(length)
+-    turtle.right(angle)
+-    counter = counter + 1
+-
+-# Answer = '0'
+-# while Answer != 'YES':
+-#     Answer = input('Please enter your answer : \n').upper()
+-#     print(Answer)
+-# print(Answer)
+-
+-# num = 0
+-# while num < 1000:
+-#     print('file %d created ' % num)
+-#     num = num + 1
+-
+-
+-
+Index: python-3.5/Module 3.py
+===================================================================
+--- python-3.5/Module 3.py	(date 1502912761000)
++++ python-3.5/Module 3.py	(date 1502912761000)
+@@ -1,38 +0,0 @@
+-#name = input('what is your name?')
+-#print(name)
+-# asks user for name by using the command 'input'
+-#then that input is set to equal the variable; name
+-#finally the input from the user is printed
+-
+-#update the value
+-#name = 'chris'
+-#print(name)
+-
+-#you can add or join together 2 different variables
+-#firstname = input('what is your first name?')
+-#lastname = input('what is your last name?')
+-#print('hello ' + firstname + ' ' + lastname)
+-
+-#you can change the case of a variable by using the commands upper, lower and swapcase
+-#message = ('HEllo')
+-#print(message.upper())
+-#print(message.lower())
+-#print(message.swapcase())
+-
+-#the challenge
+-
+-firstname = input('what is your first name?')
+-country = input('what country do you come from?')
+-animal = input('what is your favourite animal?')
+-
+-story = ''' the brave and selfless
+-hero called bob was ready to fight the
+-supreme overlord doctor wegdie man.
+-bob rode in on his gallant and majestic fish and went to
+-fight him in the once serene and peacefull lands
+-of now war-raveged england.'''
+-#print(story)
+-story = (story.replace('bob', firstname))
+-story = (story.replace('fish', animal))
+-story = (story.replace('england', country))
+-print(story)
+Index: python-3.5/integervariable.py
+===================================================================
+--- python-3.5/integervariable.py	(date 1502912761000)
++++ python-3.5/integervariable.py	(date 1502912761000)
+@@ -1,36 +0,0 @@
+-import sys
+-#salary = input('what is your salary? ')
+-#bonus = input('what is your bonus? ')
+-#paycheck = salary + bonus
+-#print(paycheck)
+-
+-#challenge
+-loan = input('what is your loan amount? ')
+-interestrate = input('what is your interest rate? ')
+-npayments = input('what is your number of payments? ')
+-
+-l = float(loan)
+-i = float(interestrate)
+-r = float(npayments)
+-print(l)
+-print(i)
+-print(r)
+-i = i/100
+-print("Your intereste rate is %f "  % i )
+-
+-#MonthlyEMI = L[i(1+i)r]/[(1+i)r-1]
+-x = i*(1+i)*r
+-
+-xxx = l*x
+-
+-print(xxx)
+-
+-y = (1+i)*r-1
+-print(y)
+-final = xxx/y
+-print("Your monthly EMI is %d  " % final )
+-
+-
+-
+-
+-print('there are three numbers.one,{0:d}.two,{1:2d}.and the third {2:4d}'.format(1,2,3))
+\ No newline at end of file
