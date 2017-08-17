@@ -16,21 +16,20 @@
 #       print(name +  message)
 #       return
 # main()
+
 #Challeneg
 
 def main():
     messages = input('Please add your message : - ')
-    path = input('please enter full file name and path :- ')
-    with open(path, 'a') as filename:
-        filename.write(messages + '\n')
-        filename.close()
-    rfile(path)
+    filename = input('please enter full file name and path :- ')
+    filename = open(filename, mode='w')
+    filename = filename.write(messages)
+    readfile(filename)
     return
 
-def rfile(path):
-    filename = open(path, 'r')
-    print(filename.read())
-    filename.close()
+def readfile(filename):
+    open(filename, mode='r')
+    read(filename)
+    filename()
     return
-
 main()
