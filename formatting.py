@@ -14,12 +14,12 @@ points = 19
 total = 22
 print('Correct answers: {:2%}'.format(points/total))
 
-#This will print
-#  Correct answers: 86.363636%
+#This will print "Correct answers: 86.363636%"
+
 var = 'python 3'
 print("This is {:}" .format(var))
-#this will print
-#This is python 3
+
+#This wil print "python 3"
 
 
 
