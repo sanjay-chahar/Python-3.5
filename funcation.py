@@ -34,6 +34,7 @@ def rfile(path):
     return
 
 main()
+
 # Return value to funcation
 import random
 def getAnswer(answerNumber):
